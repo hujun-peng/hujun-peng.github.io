@@ -6,17 +6,27 @@
   <title>Hujun Peng | Academic Homepage</title>
   <style>
     body { margin:0; font-family: Georgia, serif; color:#222; line-height:1.6; }
-    nav { text-align:center; padding:18px; border-bottom:1px solid #ddd; position:sticky; top:0; background:white; }
+    nav { text-align:center; padding:18px; border-bottom:1px solid #ddd; position:sticky; top:0; background:white; z-index:10; }
     nav a { margin:0 18px; color:#222; text-decoration:none; font-weight:600; }
-    .hero { background:#0f172a; color:white; padding:70px 12%; }
-    .hero h1 { font-size:42px; margin:0 0 10px; }
+    .hero { background:#081633; color:white; padding:70px 10%; }
+    .hero-container { display:flex; align-items:center; justify-content:space-between; gap:50px; flex-wrap:wrap; }
+    .hero-text { flex:2; min-width:320px; }
+    .hero-photo { flex:1; text-align:center; }
+    .hero h1 { font-size:54px; margin:0 0 20px; }
     .hero p { font-size:19px; max-width:850px; }
-    .links a { display:inline-block; margin:8px 12px 0 0; color:white; border:1px solid white; padding:6px 12px; text-decoration:none; border-radius:20px; }
+    .hero img { width:260px; height:320px; object-fit:cover; border-radius:15px; border:4px solid white; box-shadow:0 0 20px rgba(255,255,255,0.25); }
+    .links a { display:inline-block; margin:8px 12px 0 0; color:white; border:1px solid white; padding:6px 12px; text-decoration:none; border-radius:20px; font-weight:600; }
+    .links a:hover { background:white; color:#081633; }
     section { max-width:1050px; margin:55px auto; padding:0 25px; }
     h2 { border-bottom:1px solid #aaa; padding-bottom:8px; }
     .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
     .card { border:1px solid #ddd; border-radius:10px; padding:20px; background:#fafafa; }
     footer { text-align:center; padding:30px; background:#f3f3f3; margin-top:60px; }
+    @media (max-width: 700px) {
+      .hero h1 { font-size:38px; }
+      nav a { display:inline-block; margin:6px 10px; }
+      .hero img { width:220px; height:270px; }
+    }
   </style>
 </head>
 
@@ -31,45 +41,95 @@
   </nav>
 
   <div class="hero">
-    <h1>Dr.-Ing. Hujun Peng</h1>
-    <p><strong>Postdoctoral Researcher</strong><br>
-    Institute of Electrical Machines (IEM), RWTH Aachen University, Germany</p>
-    <p>Electrical Machines · High-Frequency Modeling · Insulation Systems · Condition Monitoring · Electric Aviation · AI-enabled Health Management</p>
-    <div class="links">
-      <a href="https://scholar.google.com/citations?user=-7QuQV4AAAAJ&hl=en">Google Scholar</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Dr.-Ing. Hujun Peng</h1>
+
+        <p>
+          <strong>Postdoctoral Researcher</strong><br>
+          Institute of Electrical Machines (IEM)<br>
+          RWTH Aachen University, Germany
+        </p>
+
+        <p>
+          Electrical Machines · High-Frequency Modeling · Insulation Systems ·
+          Condition Monitoring · Electric Aviation · AI-enabled Health Management
+        </p>
+
+        <div class="links">
+          <a href="https://scholar.google.com/citations?user=-7QuQV4AAAAJ&hl=en" target="_blank">Google Scholar</a>
+          <a href="CV_Dr_peng_2026_May.pdf" target="_blank">Download CV</a>
+          <a href="https://github.com/hujun-peng" target="_blank">GitHub</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="passport_peng.jpg" alt="Hujun Peng">
+      </div>
     </div>
   </div>
 
   <section id="bio">
     <h2>Biography</h2>
     <p>
-      I am a Postdoctoral Researcher at the Institute of Electrical Machines, RWTH Aachen University.
-      My research focuses on electrical machines, insulation systems, high-frequency modeling,
-      condition monitoring, and intelligent health management of electrified systems.
+      I am currently a Postdoctoral Researcher at the Institute of Electrical Machines (IEM),
+      RWTH Aachen University, Germany.
     </p>
     <p>
-      I received my Ph.D. degree from RWTH Aachen University in 2022. My research experience covers
-      fuel-cell hybrid energy systems, high-frequency modeling of electrical machines, insulation
-      material testing, lifetime prediction, and fault diagnosis of electrical drives.
+      My research interests include electrical machines, high-frequency modeling, insulation systems,
+      condition monitoring, prognostics and health management, and electric aviation propulsion systems.
+    </p>
+    <p>
+      I received my Ph.D. degree from RWTH Aachen University in 2022 and have authored more than
+      15 journal publications. My work has been carried out in collaboration with industrial partners
+      including Toyota Motor Europe, Siemens, TotalEnergies and ebm-papst.
     </p>
   </section>
 
   <section id="research">
-    <h2>Research Interests</h2>
+    <h2>Research Areas</h2>
+    <p>
+      My research focuses on the design, modeling, monitoring and lifetime prediction of electrical
+      energy conversion systems. The goal is to bridge physics-based modeling and data-driven methods
+      for next-generation intelligent electrified systems.
+    </p>
+
     <div class="grid">
-      <div class="card"><h3>Electrical Machines & Drives</h3><p>Design, modeling, optimization, and analysis of electrical machines and drive systems.</p></div>
-      <div class="card"><h3>High-Frequency Modeling</h3><p>White-box and grey-box modeling of machines, cables, and drive systems for EMC and overvoltage analysis.</p></div>
-      <div class="card"><h3>Insulation Systems</h3><p>Aging mechanisms, partial discharge, lifetime prediction, and reliability of machine insulation systems.</p></div>
-      <div class="card"><h3>Condition Monitoring</h3><p>Online monitoring, fault diagnosis, digital twins, and machine-learning-based prognostics.</p></div>
-      <div class="card"><h3>Electric Aviation</h3><p>High-power-density electric propulsion systems and health-aware design for future aircraft.</p></div>
+      <div class="card">
+        <h3>Electrical Machines & Drives</h3>
+        <p>Design, modeling, optimization, and analysis of electrical machines and drive systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>High-Frequency Modeling</h3>
+        <p>White-box and grey-box modeling of machines, cables, and drive systems for EMC and overvoltage analysis.</p>
+      </div>
+
+      <div class="card">
+        <h3>Insulation Systems</h3>
+        <p>Aging mechanisms, partial discharge, lifetime prediction, and reliability of machine insulation systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>Condition Monitoring</h3>
+        <p>Online monitoring, fault diagnosis, digital twins, and machine-learning-based prognostics.</p>
+      </div>
+
+      <div class="card">
+        <h3>Electric Aviation</h3>
+        <p>High-power-density electric propulsion systems and health-aware design for future aircraft.</p>
+      </div>
     </div>
   </section>
 
   <section id="publications">
     <h2>Selected Publications</h2>
-    <p>For a complete and updated list, please visit my <a href="https://scholar.google.com/citations?user=-7QuQV4AAAAJ&hl=en">Google Scholar profile</a>.</p>
+    <p>
+      For a complete and updated publication list, please visit my
+      <a href="https://scholar.google.com/citations?user=-7QuQV4AAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
+    </p>
+
     <ul>
       <li>High-Frequency Modeling of Permanent Magnet Synchronous Machines Using Grey Box Models, IEEE TTE, 2024.</li>
       <li>High-Frequency Modeling of Electrical Drive Systems Considering Test Bench Environment Influence, IEEE TPEL, 2025.</li>
@@ -81,10 +141,25 @@
   <section id="projects">
     <h2>Projects & Industrial Collaborations</h2>
     <div class="grid">
-      <div class="card"><h3>Toyota Motor Europe</h3><p>High-frequency modeling of PMSMs for electric vehicle applications.</p></div>
-      <div class="card"><h3>Siemens</h3><p>Energy management and simulation design for hydrogen fuel-cell hybrid railway systems.</p></div>
-      <div class="card"><h3>TotalEnergies</h3><p>Compatibility studies of lubricants, coolants, and electrical insulation systems.</p></div>
-      <div class="card"><h3>ebm-papst</h3><p>Modeling of ferromagnetic materials under machining-induced residual stress.</p></div>
+      <div class="card">
+        <h3>Toyota Motor Europe</h3>
+        <p>High-frequency modeling of PMSMs for electric vehicle applications.</p>
+      </div>
+
+      <div class="card">
+        <h3>Siemens</h3>
+        <p>Energy management and simulation design for hydrogen fuel-cell hybrid railway systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>TotalEnergies</h3>
+        <p>Compatibility studies of lubricants, coolants, and electrical insulation systems.</p>
+      </div>
+
+      <div class="card">
+        <h3>ebm-papst</h3>
+        <p>Modeling of ferromagnetic materials under machining-induced residual stress.</p>
+      </div>
     </div>
   </section>
 
